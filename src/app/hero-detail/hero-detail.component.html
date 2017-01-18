@@ -1,0 +1,49 @@
+<section *ngIf="hero">
+  <div class="callout large">
+    <div class="row column text-center">
+      <h1>
+        {{hero.name}}  
+      </h1>
+      
+      <p class="lead">
+        {{hero.lead}}
+      </p>
+      
+      <a [href]="hero.url" target="_blank" class="button">
+        {{hero.name}}
+        Website
+        <i class="fa fa-external-link"></i>
+      </a>
+    </div>
+  </div>
+
+  <div class="row content-group">
+    <div class="medium-6 columns">
+      <h2>
+        About
+        {{hero.name}}
+      </h2>
+
+      <p>
+        {{hero.description}}
+      </p>
+    </div>
+
+    <div class="show-for-medium-up medium-6 large-offset-1 large-5 columns">
+        <img src="http://placehold.it/500x250&text=Volunteer photo" 
+            alt="Volunteer photo">
+    </div>
+  </div>
+
+  <div class="row content-group">
+    <div *ngFor="let bulletPoint of hero.bulletPoints" class="medium-4 columns">
+      <p>{{bulletPoint}}</p>
+    </div>
+  </div>
+
+  <div class="row content-group-lg">
+    <div class="small-12 columns">
+      <button type="button" class="button" (click)="goBack()">Back</button>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,53 @@
+<div class="row content-group">
+    <div class="medium-6 large-6 columns">
+        <h1 class="h2">
+            Best Volunteer Opportunities in Washington, D.C.
+        </h1>
+
+        <p class="subheader">
+            Volunteering provides a sense of purpose and an outlet for helping others. 
+            You'll help strengthen your community while building new skills.
+        </p>
+
+        <p class="subheader">
+            Below you'll find the best volunteer organizations in and around the D.C.
+            area. From helping families achieve the dream of home ownership, to feeding the
+            hungry, to helping animals, there's something for everyone.
+        </p>
+    </div>
+
+    <div class="show-for-medium-up medium-6 large-offset-1 large-5 columns">
+        <img src="http://placehold.it/500x250&text=Featured event" 
+            alt="Featured volunteer event">
+    </div>
+
+    <div class="medium-5 large-3 columns">
+    </div>
+</div>
+
+<div class="row column">
+    <hr>
+</div>
+
+<div class="row column">
+    <p class="lead">
+        Top Opportunities
+    </p>
+</div>
+
+<div class="row small-up-1 medium-up-2 large-up-3">
+    <div *ngFor="let hero of heroes" class="column">
+        <a [routerLink]="['/detail', hero.id]">
+            <div class="callout">
+                <h2 class="h5" [textContent]="hero.name"></h2>
+
+                <div class="img-container ratio-1-1">
+                    <img src="/assets/images/{{hero.teaserImage}}@large.jpg" 
+                        [alt]="hero.name">
+                </div>
+
+                <p class="content-group" [textContent]="hero.lead"></p>
+            </div>
+        </a>
+    </div>
+</div>

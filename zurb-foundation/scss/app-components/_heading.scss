@@ -1,0 +1,15 @@
+.h2 {
+    font-size: 1.22rem;
+
+    @media screen and (min-width: 40em) {
+        font-size: 2.5rem;
+    }
+}
+
+.h5 {
+    font-size: 1rem;
+
+    @media screen and (min-width: 40em) {
+        font-size: 1.25rem;
+    }
+}

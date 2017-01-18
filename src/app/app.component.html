@@ -1,3 +1,63 @@
-<h1>
-  {{title}}
-</h1>
+<nav>
+    <div class="top-bar" id="realEstateMenu">
+        <div class="row">
+            <div class="small-12 columns text-white">
+                <div class="top-bar-left">
+                    <ul class="menu accordion-menu" data-responsive-menu="accordion" role="tablist" aria-multiselectable="true">
+                        <li class="menu-text" role="menuitem">
+                            <a routerLink="/dashboard" 
+                                routerLinkActive="active">
+                                D.C. Volunteer
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<router-outlet></router-outlet>
+
+<footer>
+    <div class="row footer">
+        <div class="small-12 medium-4 large-4 columns">
+            D.C. Volunteer brings you the best volunteer organizations and opportunities in the Washington, D.C. area. From helping families
+            achieve the dream of home ownership, to feeding the hungry, to helping animals, there's something for everyone.
+        </div>
+
+        <div class="small-12 medium-4 large-4 columns">
+            <ul class="fa-ul">
+                <li>
+                    <i class="fa-li fa fa-envelope-o fa-2x"></i>
+                    <span>                        
+                        <a href="http://shermandigital.com/contact/">Contact us</a>
+                        to list your organization or feature an upcoming event
+                    </span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="small-12 medium-4 large-4 columns">
+            <div class="menu-container">
+                <a routerLink="/dashboard" routerLinkActive="active">
+                    <h5>
+                        Home
+                    </h5>
+                </a>
+                <span>Best volunteer opportunities in D.C.</span>
+            </div>
+        </div>
+    </div>
+    <div class="row copyright">
+        <div class="small-12 medium-6 large-6 columns">
+            &copy; 2017 D.C. Volunteer, All Rights Reserved.<br>
+        </div>
+        <div class="medium-6 large-6 columns hide-for-small text-right">
+            Developed by <a href="http://shermandigital.com/">Chris Sherman</a>
+        </div>
+        <div class="small-12 columns show-for-small-only">
+            <br> Developed by <a href="http://shermandigital.com/">Chris Sherman</a>
+        </div>
+    </div>
+</footer>
