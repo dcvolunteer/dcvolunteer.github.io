@@ -1,19 +1,18 @@
 import { Injectable } from '@angular/core';
-import {Observable} from 'rxjs/Rx';
-import {
-    Router, Resolve,
-    ActivatedRouteSnapshot,
-    RouterStateSnapshot
-} from '@angular/router';
+import { Router, Resolve, ActivatedRouteSnapshot } from '@angular/router';
+
 import { Hero } from './hero';
 import { HeroService } from './hero.service';
 
 @Injectable()
-export class HeroDetailResolveService implements Resolve<Hero> {
+export class HeroDetailResolve implements Resolve<any> {
+
     constructor(private heroService: HeroService, private router: Router) { }
-    
-    resolve(route: ActivatedRouteSnapshot): Observable<any>|Promise<any>|any {
+
+    resolve(route: ActivatedRouteSnapshot) {
         let id = +route.params['id'];
+
+
         return this.heroService.getHero(id).then(hero => {
             if (hero) {
                 return hero;
@@ -23,4 +22,5 @@ export class HeroDetailResolveService implements Resolve<Hero> {
             }
         });
     }
+
 }

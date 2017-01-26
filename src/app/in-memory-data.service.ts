@@ -13,7 +13,8 @@ export class InMemoryDataService implements InMemoryDbService {
           '100% of HYPDC membership dues and fundraising profits are used to fund the construction of DC Habitat homes.'
         ],
         url: 'http://www.dchabitat.org/volunteer/young-professionals/join-now/',
-        teaserImage: 'habitat-for-humanity-logo'
+        teaserImage: 'habitat-for-humanity-logo',
+        photoImage: 'habitat-for-humanity-photo',
       },
       {
         id: 12,
@@ -26,7 +27,8 @@ export class InMemoryDataService implements InMemoryDbService {
           'We hope to serve as a model for other animal welfare organizations and to create a community where there is a loving home for every unwanted animal, affordable medical care for every sick and injured animal, an end to animal abuse and cruelty, and stronger bonds between animals and people through education and training.'
         ],
         url: 'http://www.humanerescuealliance.org/',
-        teaserImage: 'humane-rescue-alliance'
+        teaserImage: 'humane-rescue-alliance',
+        photoImage: 'humane-rescue-alliance-photo',
       },
       {
         id: 13,
@@ -39,7 +41,8 @@ export class InMemoryDataService implements InMemoryDbService {
           'Make a difference by bringing your unique experience, background, and perspective to our work.'
         ],
         url: 'https://www.volunteer.gov/results.cfm?states=DC',
-        teaserImage: 'national-park-service'
+        teaserImage: 'national-park-service',
+        photoImage: 'national-park-service-photo',
       },
       {
         id: 14,
@@ -52,7 +55,8 @@ export class InMemoryDataService implements InMemoryDbService {
           'We believe in building a more equitable food system that ensures access to healthy, dignified food and economic opportunity for all.'
         ],
         url: 'https://dccentralkitchen.org/',
-        teaserImage: 'dcck'
+        teaserImage: 'dcck',
+        photoImage: 'dcck-photo',
       },
       {
         id: 15,
@@ -65,7 +69,8 @@ export class InMemoryDataService implements InMemoryDbService {
           'By partnering with 444 community organizations in DC, MD, and VA, as well as delivering food directly into hard to reach areas, the CAFB is helping 540,000 people each year get access to good, healthy food.'
         ],
         url: 'https://www.capitalareafoodbank.org/',
-        teaserImage: 'capitalfood'
+        teaserImage: 'capitalfood',
+        photoImage: 'capitalfood-photo',
       },
       {
         id: 16,
@@ -78,7 +83,8 @@ export class InMemoryDataService implements InMemoryDbService {
           'Our coding sessions will work proactively to eliminate gender and socioeconomic barriers to computer science by providing a no-cost way for young people to experience programming early—and have fun doing it! Most sessions require no prior knowledge!'
         ],
         url: 'http://www.coderdojonova.co/',
-        teaserImage: 'coderdojo'
+        teaserImage: 'coderdojo',
+        photoImage: 'coderdojo-photo',
       }
     ];
     return { heroes };

@@ -1,10 +1,9 @@
 import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent }   from './dashboard/dashboard.component';
-import { HeroesComponent }      from './heroes/heroes.component';
 import { HeroDetailComponent }  from './hero-detail/hero-detail.component';
-import { DashboardResolveService } from './dashboard-resolve.service';
-import { HeroDetailResolveService } from './hero-detail-resolve.service';
+import { DashboardResolve } from './dashboard.resolve';
+import { HeroDetailResolve } from './hero-detail.resolve';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -12,24 +11,23 @@ const routes: Routes = [
     path: 'dashboard',  
     component: DashboardComponent,
     resolve: {
-      heroes: DashboardResolveService  
+      heroes: DashboardResolve
     },
   },
   { 
     path: 'detail/:id', 
     component: HeroDetailComponent,
     resolve: {
-      hero: HeroDetailResolveService
+      hero: HeroDetailResolve
     },
   },
-  { path: 'heroes',     component: HeroesComponent }
 ];
 @NgModule({
   imports: [ RouterModule.forRoot(routes) ],
   exports: [ RouterModule ],
   providers: [
-    DashboardResolveService,
-    HeroDetailResolveService
+    DashboardResolve,
+    HeroDetailResolve
   ]
 })
 export class AppRoutingModule {}

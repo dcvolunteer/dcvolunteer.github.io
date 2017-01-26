@@ -9,15 +9,15 @@ import { InMemoryDataService } from './in-memory-data.service';
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { HeroesComponent } from './heroes/heroes.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { HeroService } from './hero.service';
+import { DashboardResolve } from './dashboard.resolve';
+import { HeroDetailResolve } from './hero-detail.resolve';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    HeroesComponent,
     HeroDetailComponent
   ],
   imports: [
@@ -27,7 +27,11 @@ import { HeroService } from './hero.service';
     InMemoryWebApiModule.forRoot(InMemoryDataService),
     AppRoutingModule
   ],
-  providers: [HeroService],
+  providers: [
+    DashboardResolve,
+    HeroDetailResolve,
+    HeroService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
