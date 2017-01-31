@@ -6,16 +6,16 @@ import { DashboardResolve } from './dashboard.resolve';
 import { HeroDetailResolve } from './hero-detail.resolve';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: '', redirectTo: '/opportunities', pathMatch: 'full' },
   { 
-    path: 'dashboard',  
+    path: 'opportunities',  
     component: DashboardComponent,
     resolve: {
       heroes: DashboardResolve
     },
   },
   { 
-    path: 'detail/:id', 
+    path: 'opportunities/:urlFriendlyId', 
     component: HeroDetailComponent,
     resolve: {
       hero: HeroDetailResolve

@@ -19,6 +19,12 @@ export class HeroService {
                  return heroes.find(hero => hero.id === id);
                 });
   }
+  getHeroByUrlFriendlyId(urlFriendlyId: string): Promise<Hero> {
+    return this.getHeroes()
+               .then(heroes => {
+                 return heroes.find(hero => hero.urlFriendlyId === urlFriendlyId);
+                });
+  }
   delete(id: number): Promise<void> {
     const url = `${this.heroesUrl}/${id}`;
     return this.http.delete(url, {headers: this.headers})

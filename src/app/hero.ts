@@ -1,5 +1,6 @@
 export class Hero {
   id: number;
+  urlFriendlyId: string;
   name: string;
   lead: string;
   description: string;

@@ -4,6 +4,7 @@ export class InMemoryDataService implements InMemoryDbService {
     let heroes = [
       {
         id: 11,
+        urlFriendlyId: 'habitat-for-humanity',
         name: 'Habitat for Humanity',
         lead: 'Habitat homes offer more than a roof and walls — they offer hope. We want everyone to have a decent place to live.',
         description: 'Habitat Young Professionals of Washington, D.C. (HYPDC) is a network of DC area professionals committed to the vision of a world where everyone has a decent place to live, and to making a difference in the community of Washington, D.C. By joining HYPDC, you\'ll have the opportunity to connect with a diverse group of dedicated, like-minded individuals in the DC area. Each year, HYPDC members make a positive impact in the work of DC Habitat, through fundraising efforts, volunteer days, happy hours, and more.',
@@ -18,6 +19,7 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 12,
+        urlFriendlyId: 'humane-rescue-alliance',
         name: 'Humane Rescue Alliance',
         lead: 'Tenaciously protecting and advocating for the animals in our community and celebrating people\'s love and compassion for them.',
         description: 'The Humane Rescue Alliance operates the District\'s open-access animal adoption center offering an array of dynamic programs and services. Join the team striving to ensure a loving home for every unwanted animal, affordable medical care for every sick or injured animal, an end to animal abuse and cruelty, and stronger bonds between animals and people through education and training.',
@@ -32,6 +34,7 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 13,
+        urlFriendlyId: 'national-park-service',
         name: 'National Park Service',
         lead: 'Taking care of the national parks and helping Americans take care of their communities is a job we love.',
         description: 'The National Park Service has been entrusted with the care of our national parks. With the help of volunteers, it safeguards these special places and shares their stories with more than 275 million visitors annually.',
@@ -46,6 +49,7 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 14,
+        urlFriendlyId: 'dc-central-kitchen',
         name: 'D.C. Central Kitchen',
         lead: 'Every day, dedicated volunteers help us transform wasted food into balanced meals for our community.',
         description: 'DC Central Kitchen was founded in 1989 by young nightclub manager named Robert Egger. Frustrated and challenged by his volunteer experiences with traditional charitable responses to hunger and homelessness, Robert pioneered a new model aimed at liberating people from the conditions of poverty. Robert\'s idea for a ‘central kitchen\' involved picking up wasted food (which people said was unwise), turning it into balanced meals for shelters and nonprofits (which people said was unsustainable), and using that process to train jobless adults in the culinary arts (which people said was impossible).',
@@ -60,6 +64,7 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 15,
+        urlFriendlyId: 'capital-area-food-bank',
         name: 'Capital Area Food Bank',
         lead: 'Working to solve hunger and its companion problems: chronic undernutrition, heart disease, and obesity.',
         description: 'The Capital Area Food Bank is the largest organization in the Washington metro area working to solve hunger and its companion problems: chronic undernutrition, heart disease, and obesity. We provide meals to 12 percent of the Washington metro area population – that\'s 540,000 of our region\'s mothers, fathers, sons, daughters, sisters, brothers, and grandparents. We work with our network of 444 food assistance partners to provide food and nutrition education to our neighbors in need.',
@@ -74,6 +79,7 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 16,
+        urlFriendlyId: 'coderdojo-nova',
         name: 'CoderDojo NOVA',
         lead: 'CoderDojo is a movement oriented around running free, not-for-profit coding clubs and regular sesssions for young people.',
         description: 'At CoderDojo NOVA (“CoderNova”), young people learn how to code, develop websites, apps, programs, games and more. CoderNova is set up, run by and taught at by volunteers. We organize tours of technology companies, bring in guest speakers to talk about their career and what they do, and organize events. CoderNova makes development and learning to code a fun, sociable, and cool experience. CoderNova also puts a strong emphasis on open source and free software, and has a strong network of members and volunteers globally.',

@@ -10,14 +10,14 @@ export class HeroDetailResolve implements Resolve<any> {
     constructor(private heroService: HeroService, private router: Router) { }
 
     resolve(route: ActivatedRouteSnapshot) {
-        let id = +route.params['id'];
+        let id = route.params['urlFriendlyId'];
 
 
-        return this.heroService.getHero(id).then(hero => {
+        return this.heroService.getHeroByUrlFriendlyId(id).then(hero => {
             if (hero) {
                 return hero;
             } else { // id not found
-                this.router.navigate(['/dashboard']);
+                this.router.navigate(['/opportunities']);
                 return false;
             }
         });
