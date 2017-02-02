@@ -10,7 +10,10 @@ import { InMemoryDataService } from './in-memory-data.service';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+
 import { HeroService } from './hero.service';
+
 import { DashboardResolve } from './dashboard.resolve';
 import { HeroDetailResolve } from './hero-detail.resolve';
 
@@ -18,7 +21,8 @@ import { HeroDetailResolve } from './hero-detail.resolve';
   declarations: [
     AppComponent,
     DashboardComponent,
-    HeroDetailComponent
+    HeroDetailComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

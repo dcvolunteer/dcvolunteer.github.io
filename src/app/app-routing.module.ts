@@ -4,6 +4,7 @@ import { DashboardComponent }   from './dashboard/dashboard.component';
 import { HeroDetailComponent }  from './hero-detail/hero-detail.component';
 import { DashboardResolve } from './dashboard.resolve';
 import { HeroDetailResolve } from './hero-detail.resolve';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/opportunities', pathMatch: 'full' },
@@ -21,6 +22,7 @@ const routes: Routes = [
       hero: HeroDetailResolve
     },
   },
+  { path: '**', component: PageNotFoundComponent },
 ];
 @NgModule({
   imports: [ RouterModule.forRoot(routes) ],
