@@ -19,31 +19,50 @@
 
   <!-- Google Analytics code. -->
   <script>
-    (function (i, s, o, g, r, a, m) {
-    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-      (i[r].q = i[r].q || []).push(arguments)
-    }, i[r].l = 1 * new Date(); a = s.createElement(o),
-      m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+  (function (i, s, o, g, r, a, m) {
+  i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+  (i[r].q = i[r].q || []).push(arguments)
+  }, i[r].l = 1 * new Date(); a = s.createElement(o),
+  m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-    ga('create', 'UA-46136239-10', 'auto');
-    ga('send', 'pageview');
+  ga('create', 'UA-46136239-10', 'auto');
+  ga('send', 'pageview');
   </script>
   <!-- /Google Analytics code. -->
 
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
-    crossorigin="anonymous">
-<link href="styles.3bd862fa992db6c6860c.bundle.css" rel="stylesheet"></head>
+  crossorigin="anonymous">
+<link href="styles.bundle.css" rel="stylesheet"></head>
 
 <body>
+
+  <!-- Github Pages hack to allow SPA refresh without receiving 404. -->
+  <script>
+    (function () {
+
+      // Retrieve the URL the user was trying to access when receiving the 404.
+      var redirect = sessionStorage.redirect;
+
+      // Remove the URL from sessionStorage.
+      delete sessionStorage.redirect;
+
+      // Check if we actually need to redirect.
+      if (redirect && redirect != location.href) {
+        // We need to redirect to the URL the user was trying to access.
+        history.replaceState(null, null, redirect);
+      }
+    })();
+  </script>
+  <!-- /Github Pages hack. -->
+
   <app-root>
     <div class="text-center" style="margin-top: 50px;">
-<h5>
-  <i class="fa fa-spinner fa-pulse fa-fw"></i> Loading&hellip;
-</h5>
-</div>
-</app-root>
+      <h5>
+        <i class="fa fa-spinner fa-pulse fa-fw"></i> Loading&hellip;
+      </h5>
+    </div>
+  </app-root>
 
-<script type="text/javascript" src="inline.29fea79c7d55d42f3cbb.bundle.js"></script><script type="text/javascript" src="vendor.f3f1b05f6fd8c1b5942f.bundle.js"></script><script type="text/javascript" src="main.4ffe9d0612fadf852f77.bundle.js"></script></body>
-
+<script type="text/javascript" src="inline.bundle.js"></script><script type="text/javascript" src="vendor.bundle.js"></script><script type="text/javascript" src="main.bundle.js"></script></body>
 </html>
