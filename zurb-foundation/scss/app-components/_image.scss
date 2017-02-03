@@ -17,18 +17,24 @@
         left: 0;
         background-color: $black;
         color: $white;
+        margin: 0;
         opacity: 0.75;
         width: 100%;
     }
 
     .caption-content {
-        padding: emCalc(10px);
+        padding: rem-calc(10px);
         margin: 0;
     }
 }
 
 $ratio-1-1: 100%;
+$ratio-feature-image: percentage(239/470);
 
 .ratio-1-1 {
     padding-bottom: 100%;
+}
+
+.ratio-feature-image {
+    padding-bottom: $ratio-feature-image;
 }

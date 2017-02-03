@@ -4,11 +4,11 @@ footer {
     padding-top: 25px;
 
     img {
-        margin: emCalc(5px) emCalc(10px) emCalc(5px) 0;
+        margin: rem-calc(5px) rem-calc(10px) rem-calc(5px) 0;
     }
 
     li {
-        margin-bottom: emCalc(20px);
+        margin-bottom: rem-calc(20px);
     }
 
 		.copyright {
@@ -33,20 +33,20 @@ footer {
 			}
 
             @include breakpoint(small only) {
-                margin-bottom: emCalc(25px);
+                margin-bottom: rem-calc(25px);
 
                 div:last-of-type {
                     margin-bottom: 0;
                 }
 
                 i {
-                    padding-left: emCalc(25px);
+                    padding-left: rem-calc(25px);
                 }
             }
 		}
     }
 
     .menu-container {
-        margin-bottom: emCalc(10px);
+        margin-bottom: rem-calc(10px);
     }
 }
