@@ -1,12 +1,12 @@
 webpackJsonp([0,3],{
 
-/***/ 107:
+/***/ 108:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(145);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__ = __webpack_require__(678);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(146);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__ = __webpack_require__(679);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return HeroService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -82,12 +82,92 @@ var HeroService = (function () {
 
 /***/ },
 
-/***/ 329:
+/***/ 152:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__hero_service__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser_src_dom_dom_adapter__ = __webpack_require__(16);
+/* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return SeoService; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var SeoService = (function () {
+    /**
+     * Inject the Angular 2 Title Service
+     * @param titleService
+     */
+    function SeoService(titleService) {
+        this.titleService = titleService;
+        this.DOM = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__angular_platform_browser_src_dom_dom_adapter__["a" /* getDOM */])();
+        /**
+         * get the <head> Element
+         * @type {any}
+         */
+        this.headElement = this.DOM.query('head');
+        this.metaDescription = this.getOrCreateMetaElement('description');
+        this.robots = this.getOrCreateMetaElement('robots');
+    }
+    SeoService.prototype.getTitle = function () {
+        return this.titleService.getTitle();
+    };
+    SeoService.prototype.setTitle = function (newTitle) {
+        this.titleService.setTitle(newTitle);
+    };
+    SeoService.prototype.getMetaDescription = function () {
+        return this.metaDescription.getAttribute('content');
+    };
+    SeoService.prototype.setMetaDescription = function (description) {
+        this.metaDescription.setAttribute('content', description);
+    };
+    SeoService.prototype.getMetaRobots = function () {
+        return this.robots.getAttribute('content');
+    };
+    SeoService.prototype.setMetaRobots = function (robots) {
+        this.robots.setAttribute('content', robots);
+    };
+    /**
+     * get the HTML Element when it is in the markup, or create it.
+     * @param name
+     * @returns {HTMLElement}
+     */
+    SeoService.prototype.getOrCreateMetaElement = function (name) {
+        var el;
+        el = this.DOM.query('meta[name=' + name + ']');
+        if (el === null) {
+            el = this.DOM.createElement('meta');
+            el.setAttribute('name', name);
+            this.headElement.appendChild(el);
+        }
+        return el;
+    };
+    SeoService = __decorate([
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* Injectable */])(), 
+        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["b" /* Title */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["b" /* Title */]) === 'function' && _a) || Object])
+    ], SeoService);
+    return SeoService;
+    var _a;
+}());
+//# sourceMappingURL=C:/Users/Chris/Desktop/dc-volunteer/src/seo.service.js.map
+
+/***/ },
+
+/***/ 330:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__hero_service__ = __webpack_require__(108);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return DashboardResolve; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -121,13 +201,15 @@ var DashboardResolve = (function () {
 
 /***/ },
 
-/***/ 330:
+/***/ 331:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(104);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__hero_service__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__hero_service__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__common_seo_service__ = __webpack_require__(152);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return DashboardComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -141,10 +223,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var DashboardComponent = (function () {
-    function DashboardComponent(heroService, route) {
+    function DashboardComponent(heroService, route, titleService, seoService) {
         this.heroService = heroService;
         this.route = route;
+        this.titleService = titleService;
+        this.seoService = seoService;
+        this.titleService.setTitle('D.C. Volunteer :: Featured Opportunities');
+        this.seoService.setMetaDescription('D.C. Volunteer features the best volunteer opportunities in and around the D.C. area. Find organizations that fit your interests, and get involved in your community.');
     }
     DashboardComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -153,28 +241,35 @@ var DashboardComponent = (function () {
             _this.heroes = data.heroes;
         });
     };
+    DashboardComponent.prototype.ngAfterViewInit = function () {
+        $('#opportunityCards').foundation();
+        // Re-initialize equalizer heights when the device rotates.
+        window.addEventListener("orientationchange", function () {
+            Foundation.reInit(['equalizer']);
+        }, false);
+    };
     DashboardComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["G" /* Component */])({
             selector: 'app-dashboard',
-            template: __webpack_require__(671),
-            styles: [__webpack_require__(668)]
+            template: __webpack_require__(672),
+            styles: [__webpack_require__(669)]
         }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__hero_service__["a" /* HeroService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__hero_service__["a" /* HeroService */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */]) === 'function' && _b) || Object])
+        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__hero_service__["a" /* HeroService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__hero_service__["a" /* HeroService */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */]) === 'function' && _b) || Object, (typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__["b" /* Title */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__["b" /* Title */]) === 'function' && _c) || Object, (typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__common_seo_service__["a" /* SeoService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_4__common_seo_service__["a" /* SeoService */]) === 'function' && _d) || Object])
     ], DashboardComponent);
     return DashboardComponent;
-    var _a, _b;
+    var _a, _b, _c, _d;
 }());
 //# sourceMappingURL=C:/Users/Chris/Desktop/dc-volunteer/src/dashboard.component.js.map
 
 /***/ },
 
-/***/ 331:
+/***/ 332:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(104);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__hero_service__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__hero_service__ = __webpack_require__(108);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return HeroDetailResolve; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -201,7 +296,7 @@ var HeroDetailResolve = (function () {
                 return hero;
             }
             else {
-                _this.router.navigate(['/opportunities']);
+                _this.router.navigate(['/']);
                 return false;
             }
         });
@@ -217,14 +312,16 @@ var HeroDetailResolve = (function () {
 
 /***/ },
 
-/***/ 332:
+/***/ 333:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(104);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common__ = __webpack_require__(83);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__hero_service__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common__ = __webpack_require__(84);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__hero_service__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__common_seo_service__ = __webpack_require__(152);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return HeroDetailComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -239,11 +336,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var HeroDetailComponent = (function () {
-    function HeroDetailComponent(heroService, route, location) {
+    function HeroDetailComponent(heroService, route, location, titleService, seoService) {
         this.heroService = heroService;
         this.route = route;
         this.location = location;
+        this.titleService = titleService;
+        this.seoService = seoService;
     }
     HeroDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -251,6 +352,17 @@ var HeroDetailComponent = (function () {
             .subscribe(function (data) {
             _this.hero = data.hero;
         });
+        this.titleService.setTitle('D.C. Volunteer :: ' + this.hero.name);
+        this.seoService.setMetaDescription('D.C. Volunteer opportunity: ' +
+            this.hero.name + '. ' +
+            this.hero.lead);
+    };
+    HeroDetailComponent.prototype.ngAfterViewInit = function () {
+        $('#bulletPointCards').foundation();
+        // Re-initialize equalizer heights when the device rotates.
+        window.addEventListener("orientationchange", function () {
+            Foundation.reInit(['equalizer']);
+        }, false);
     };
     HeroDetailComponent.prototype.save = function () {
         var _this = this;
@@ -263,23 +375,25 @@ var HeroDetailComponent = (function () {
     HeroDetailComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["G" /* Component */])({
             selector: 'app-hero-detail',
-            template: __webpack_require__(672),
-            styles: [__webpack_require__(669)]
+            template: __webpack_require__(673),
+            styles: [__webpack_require__(670)]
         }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__hero_service__["a" /* HeroService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_3__hero_service__["a" /* HeroService */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */]) === 'function' && _b) || Object, (typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_common__["d" /* Location */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__angular_common__["d" /* Location */]) === 'function' && _c) || Object])
+        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__hero_service__["a" /* HeroService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_3__hero_service__["a" /* HeroService */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */]) === 'function' && _b) || Object, (typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_common__["d" /* Location */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__angular_common__["d" /* Location */]) === 'function' && _c) || Object, (typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["b" /* Title */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["b" /* Title */]) === 'function' && _d) || Object, (typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_5__common_seo_service__["a" /* SeoService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_5__common_seo_service__["a" /* SeoService */]) === 'function' && _e) || Object])
     ], HeroDetailComponent);
     return HeroDetailComponent;
-    var _a, _b, _c;
+    var _a, _b, _c, _d, _e;
 }());
 //# sourceMappingURL=C:/Users/Chris/Desktop/dc-volunteer/src/hero-detail.component.js.map
 
 /***/ },
 
-/***/ 333:
+/***/ 334:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__common_seo_service__ = __webpack_require__(152);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return PageNotFoundComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -291,22 +405,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
 var PageNotFoundComponent = (function () {
-    function PageNotFoundComponent() {
+    function PageNotFoundComponent(titleService, seoService) {
+        this.titleService = titleService;
+        this.seoService = seoService;
+        this.titleService.setTitle('D.C. Volunteer :: Page Not Found');
+        this.seoService.setMetaDescription('We couldn\'t find the page you\'re looking for.');
     }
     PageNotFoundComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["G" /* Component */])({
-            template: __webpack_require__(673),
+            template: __webpack_require__(674),
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["b" /* Title */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["b" /* Title */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__common_seo_service__["a" /* SeoService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__common_seo_service__["a" /* SeoService */]) === 'function' && _b) || Object])
     ], PageNotFoundComponent);
     return PageNotFoundComponent;
+    var _a, _b;
 }());
 //# sourceMappingURL=C:/Users/Chris/Desktop/dc-volunteer/src/page-not-found.component.js.map
 
 /***/ },
 
-/***/ 390:
+/***/ 391:
 /***/ function(module, exports) {
 
 function webpackEmptyContext(req) {
@@ -315,21 +436,21 @@ function webpackEmptyContext(req) {
 webpackEmptyContext.keys = function() { return []; };
 webpackEmptyContext.resolve = webpackEmptyContext;
 module.exports = webpackEmptyContext;
-webpackEmptyContext.id = 390;
+webpackEmptyContext.id = 391;
 
 
 /***/ },
 
-/***/ 391:
+/***/ 392:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__polyfills_ts__ = __webpack_require__(512);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__polyfills_ts__ = __webpack_require__(513);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__polyfills_ts___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__polyfills_ts__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(478);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(479);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(511);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_app_module__ = __webpack_require__(509);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(512);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_app_module__ = __webpack_require__(510);
 
 
 
@@ -343,17 +464,17 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dyna
 
 /***/ },
 
-/***/ 507:
+/***/ 508:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(104);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__dashboard_dashboard_component__ = __webpack_require__(330);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__hero_detail_hero_detail_component__ = __webpack_require__(332);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__dashboard_resolve__ = __webpack_require__(329);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__hero_detail_resolve__ = __webpack_require__(331);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__page_not_found_page_not_found_component__ = __webpack_require__(333);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__dashboard_dashboard_component__ = __webpack_require__(331);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__hero_detail_hero_detail_component__ = __webpack_require__(333);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__dashboard_resolve__ = __webpack_require__(330);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__hero_detail_resolve__ = __webpack_require__(332);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__page_not_found_page_not_found_component__ = __webpack_require__(334);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return AppRoutingModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -372,9 +493,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var routes = [
-    { path: '', redirectTo: '/opportunities', pathMatch: 'full' },
     {
-        path: 'opportunities',
+        path: '',
         component: __WEBPACK_IMPORTED_MODULE_2__dashboard_dashboard_component__["a" /* DashboardComponent */],
         resolve: {
             heroes: __WEBPACK_IMPORTED_MODULE_4__dashboard_resolve__["a" /* DashboardResolve */]
@@ -409,12 +529,12 @@ var AppRoutingModule = (function () {
 
 /***/ },
 
-/***/ 508:
+/***/ 509:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(105);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return AppComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -430,7 +550,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var AppComponent = (function () {
     function AppComponent(router) {
         this.router = router;
-        this.title = 'D.C. Volunteer';
     }
     AppComponent.prototype.ngOnInit = function () {
         // Scroll to the top of the view when the route changes.
@@ -444,8 +563,8 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["G" /* Component */])({
             selector: 'app-root',
-            template: __webpack_require__(670),
-            styles: [__webpack_require__(667)]
+            template: __webpack_require__(671),
+            styles: [__webpack_require__(668)]
         }), 
         __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === 'function' && _a) || Object])
     ], AppComponent);
@@ -456,24 +575,25 @@ var AppComponent = (function () {
 
 /***/ },
 
-/***/ 509:
+/***/ 510:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(149);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(56);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(469);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(145);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_routing_module__ = __webpack_require__(507);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular_in_memory_web_api__ = __webpack_require__(514);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__in_memory_data_service__ = __webpack_require__(510);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_component__ = __webpack_require__(508);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__dashboard_dashboard_component__ = __webpack_require__(330);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__hero_detail_hero_detail_component__ = __webpack_require__(332);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__page_not_found_page_not_found_component__ = __webpack_require__(333);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__hero_service__ = __webpack_require__(107);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__dashboard_resolve__ = __webpack_require__(329);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__hero_detail_resolve__ = __webpack_require__(331);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(470);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(146);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_routing_module__ = __webpack_require__(508);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular_in_memory_web_api__ = __webpack_require__(515);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__in_memory_data_service__ = __webpack_require__(511);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_component__ = __webpack_require__(509);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__dashboard_dashboard_component__ = __webpack_require__(331);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__hero_detail_hero_detail_component__ = __webpack_require__(333);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__page_not_found_page_not_found_component__ = __webpack_require__(334);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__hero_service__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__common_seo_service__ = __webpack_require__(152);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__dashboard_resolve__ = __webpack_require__(330);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__hero_detail_resolve__ = __webpack_require__(332);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -498,6 +618,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var AppModule = (function () {
     function AppModule() {
     }
@@ -507,21 +628,25 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */],
                 __WEBPACK_IMPORTED_MODULE_8__dashboard_dashboard_component__["a" /* DashboardComponent */],
                 __WEBPACK_IMPORTED_MODULE_9__hero_detail_hero_detail_component__["a" /* HeroDetailComponent */],
-                __WEBPACK_IMPORTED_MODULE_10__page_not_found_page_not_found_component__["a" /* PageNotFoundComponent */]
+                __WEBPACK_IMPORTED_MODULE_10__page_not_found_page_not_found_component__["a" /* PageNotFoundComponent */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["b" /* BrowserModule */],
+                __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["c" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_http__["l" /* HttpModule */],
                 __WEBPACK_IMPORTED_MODULE_5_angular_in_memory_web_api__["a" /* InMemoryWebApiModule */].forRoot(__WEBPACK_IMPORTED_MODULE_6__in_memory_data_service__["a" /* InMemoryDataService */]),
-                __WEBPACK_IMPORTED_MODULE_4__app_routing_module__["a" /* AppRoutingModule */]
+                __WEBPACK_IMPORTED_MODULE_4__app_routing_module__["a" /* AppRoutingModule */],
             ],
             providers: [
-                __WEBPACK_IMPORTED_MODULE_12__dashboard_resolve__["a" /* DashboardResolve */],
-                __WEBPACK_IMPORTED_MODULE_13__hero_detail_resolve__["a" /* HeroDetailResolve */],
+                __WEBPACK_IMPORTED_MODULE_13__dashboard_resolve__["a" /* DashboardResolve */],
+                __WEBPACK_IMPORTED_MODULE_14__hero_detail_resolve__["a" /* HeroDetailResolve */],
                 __WEBPACK_IMPORTED_MODULE_11__hero_service__["a" /* HeroService */],
+                __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["b" /* Title */],
+                __WEBPACK_IMPORTED_MODULE_12__common_seo_service__["a" /* SeoService */],
             ],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */]]
+            bootstrap: [
+                __WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */],
+            ]
         }), 
         __metadata('design:paramtypes', [])
     ], AppModule);
@@ -531,7 +656,7 @@ var AppModule = (function () {
 
 /***/ },
 
-/***/ 510:
+/***/ 511:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -640,7 +765,7 @@ var InMemoryDataService = (function () {
 
 /***/ },
 
-/***/ 511:
+/***/ 512:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -656,41 +781,41 @@ var environment = {
 
 /***/ },
 
-/***/ 512:
+/***/ 513:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_core_js_es6_symbol__ = __webpack_require__(528);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_core_js_es6_symbol__ = __webpack_require__(529);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_core_js_es6_symbol___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_core_js_es6_symbol__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_core_js_es6_object__ = __webpack_require__(521);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_core_js_es6_object__ = __webpack_require__(522);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_core_js_es6_object___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_core_js_es6_object__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_core_js_es6_function__ = __webpack_require__(517);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_core_js_es6_function__ = __webpack_require__(518);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_core_js_es6_function___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_core_js_es6_function__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_core_js_es6_parse_int__ = __webpack_require__(523);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_core_js_es6_parse_int__ = __webpack_require__(524);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_core_js_es6_parse_int___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_core_js_es6_parse_int__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_core_js_es6_parse_float__ = __webpack_require__(522);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_core_js_es6_parse_float__ = __webpack_require__(523);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_core_js_es6_parse_float___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_core_js_es6_parse_float__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_core_js_es6_number__ = __webpack_require__(520);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_core_js_es6_number__ = __webpack_require__(521);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_core_js_es6_number___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_core_js_es6_number__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_core_js_es6_math__ = __webpack_require__(519);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_core_js_es6_math__ = __webpack_require__(520);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_core_js_es6_math___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_core_js_es6_math__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_core_js_es6_string__ = __webpack_require__(527);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_core_js_es6_string__ = __webpack_require__(528);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_core_js_es6_string___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_core_js_es6_string__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_core_js_es6_date__ = __webpack_require__(516);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_core_js_es6_date__ = __webpack_require__(517);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_core_js_es6_date___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_core_js_es6_date__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_core_js_es6_array__ = __webpack_require__(515);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_core_js_es6_array__ = __webpack_require__(516);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_core_js_es6_array___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_core_js_es6_array__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_core_js_es6_regexp__ = __webpack_require__(525);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_core_js_es6_regexp__ = __webpack_require__(526);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_core_js_es6_regexp___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_core_js_es6_regexp__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_core_js_es6_map__ = __webpack_require__(518);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_core_js_es6_map__ = __webpack_require__(519);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_core_js_es6_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_core_js_es6_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_core_js_es6_set__ = __webpack_require__(526);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_core_js_es6_set__ = __webpack_require__(527);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_core_js_es6_set___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12_core_js_es6_set__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_core_js_es6_reflect__ = __webpack_require__(524);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_core_js_es6_reflect__ = __webpack_require__(525);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_core_js_es6_reflect___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13_core_js_es6_reflect__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_core_js_es7_reflect__ = __webpack_require__(529);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_core_js_es7_reflect__ = __webpack_require__(530);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_core_js_es7_reflect___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_14_core_js_es7_reflect__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_zone_js_dist_zone__ = __webpack_require__(696);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_zone_js_dist_zone__ = __webpack_require__(697);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_zone_js_dist_zone___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15_zone_js_dist_zone__);
 
 
@@ -712,13 +837,6 @@ var environment = {
 
 /***/ },
 
-/***/ 667:
-/***/ function(module, exports) {
-
-module.exports = ""
-
-/***/ },
-
 /***/ 668:
 /***/ function(module, exports) {
 
@@ -736,38 +854,45 @@ module.exports = ""
 /***/ 670:
 /***/ function(module, exports) {
 
-module.exports = "<nav>\r\n    <div class=\"top-bar\" id=\"realEstateMenu\">\r\n        <div class=\"row\">\r\n            <div class=\"small-12 columns text-white\">\r\n                <div class=\"top-bar-left\">\r\n                    <ul class=\"menu accordion-menu\" data-responsive-menu=\"accordion\" role=\"tablist\" aria-multiselectable=\"true\">\r\n                        <li class=\"menu-text\" role=\"menuitem\">\r\n                            <a routerLink=\"/\" \r\n                                routerLinkActive=\"active\">\r\n                                D.C. Volunteer\r\n                            </a>\r\n                        </li>\r\n                    </ul>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</nav>\r\n\r\n<router-outlet></router-outlet>\r\n\r\n<footer>\r\n    <div class=\"row footer\">\r\n        <div class=\"small-12 medium-4 large-4 columns\">\r\n            D.C. Volunteer brings you the best volunteer organizations and opportunities in the Washington, D.C. area. From helping families\r\n            achieve the dream of home ownership, to feeding the hungry, to helping animals, there's something for everyone.\r\n        </div>\r\n\r\n        <div class=\"small-12 medium-4 large-4 columns\">\r\n            <ul class=\"fa-ul\">\r\n                <li>\r\n                    <i class=\"fa-li fa fa-envelope-o fa-2x\"></i>\r\n                    <p class=\"margin-left-xs-small-only\">                        \r\n                        <a href=\"http://shermandigital.com/contact/\">Contact us</a>\r\n                        to list your organization or feature an upcoming event\r\n                    </p>\r\n                </li>\r\n            </ul>\r\n        </div>\r\n\r\n        <div class=\"small-12 medium-4 large-4 columns\">\r\n            <div class=\"menu-container\">\r\n                <a routerLink=\"/\" routerLinkActive=\"active\">\r\n                    <h5>\r\n                        Home\r\n                    </h5>\r\n                </a>\r\n                <span>Best volunteer opportunities in D.C.</span>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"row copyright\">\r\n        <div class=\"small-12 medium-6 large-6 columns\">\r\n            &copy; 2017 D.C. Volunteer, All Rights Reserved.<br>\r\n        </div>\r\n        <div class=\"medium-6 large-6 columns show-for-medium text-right\">\r\n            Developed by <a href=\"http://shermandigital.com/\">Chris Sherman</a>\r\n        </div>\r\n        <div class=\"small-12 columns show-for-small-only\">\r\n            <br> Developed by <a href=\"http://shermandigital.com/\">Chris Sherman</a>\r\n        </div>\r\n    </div>\r\n</footer>\r\n"
+module.exports = ""
 
 /***/ },
 
 /***/ 671:
 /***/ function(module, exports) {
 
-module.exports = "<div class=\"row content-group\">\r\n    <div class=\"medium-6 large-6 columns\">\r\n        <h1 class=\"h2\">\r\n            Best Volunteer Opportunities in Washington, D.C.\r\n        </h1>\r\n\r\n        <p class=\"subheader\">\r\n            Below you'll find the best volunteer organizations in and around the D.C.\r\n            area. From helping families achieve the dream of home ownership, to feeding the\r\n            hungry, to helping animals, there's something for everyone.\r\n        </p>\r\n\r\n        <p class=\"subheader\">\r\n            Volunteering provides a sense of purpose and an outlet for helping others. \r\n            You'll help strengthen your community while building new skills.\r\n        </p>\r\n    </div>\r\n\r\n    <div class=\"show-for-medium-up medium-6 large-offset-1 large-5 columns\">\r\n\r\n        <div class=\"img-container ratio-feature-image\">\r\n            <a href=\"https://www.capitalareafoodbank.org/blue-jeans-ball/\" target=\"_blank\">\r\n                <img src=\"/assets/images/baa1831c-27bb-4d63-806a-7fb808ddb3f7.jpg\"\r\n                    alt=\"Featured volunteer event\" class=\"thumbnail\">\r\n\r\n                <p class=\"caption-container\">\r\n                    <small class=\"caption-content\">\r\n                        Featured event\r\n                    </small>\r\n                </p>\r\n            </a>\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"medium-5 large-3 columns\">\r\n    </div>\r\n</div>\r\n\r\n<div class=\"row column\">\r\n    <hr>\r\n</div>\r\n\r\n<div class=\"row column\">\r\n    <p class=\"lead\">\r\n        Top Opportunities\r\n    </p>\r\n</div>\r\n\r\n<div class=\"row small-up-1 medium-up-2 large-up-3\">\r\n    <div *ngFor=\"let hero of heroes\" class=\"column\">\r\n        <a [routerLink]=\"['/opportunities', hero.urlFriendlyId]\">\r\n            <div class=\"callout\">\r\n                <h2 class=\"h5\" [textContent]=\"hero.name\"></h2>\r\n\r\n                <div class=\"img-container ratio-1-1\">\r\n                    <img src=\"/assets/images/{{hero.teaserImage}}@large.jpg\" \r\n                        [alt]=\"hero.name\">\r\n                </div>\r\n\r\n                <p class=\"content-group\" [textContent]=\"hero.lead\"></p>\r\n            </div>\r\n        </a>\r\n    </div>\r\n</div>"
+module.exports = "<nav>\r\n    <div class=\"top-bar\" id=\"realEstateMenu\">\r\n        <div class=\"row\">\r\n            <div class=\"small-12 columns text-white\">\r\n                <div class=\"top-bar-left\">\r\n                    <ul class=\"menu accordion-menu\" data-responsive-menu=\"accordion\" role=\"tablist\" aria-multiselectable=\"true\">\r\n                        <li class=\"menu-text\" role=\"menuitem\">\r\n                            <a routerLink=\"/\" \r\n                                routerLinkActive=\"active\">\r\n                                D.C. Volunteer\r\n                            </a>\r\n                        </li>\r\n                    </ul>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</nav>\r\n\r\n<router-outlet></router-outlet>\r\n\r\n<footer>\r\n    <div class=\"row footer\">\r\n        <div class=\"small-12 medium-4 large-4 columns\">\r\n            D.C. Volunteer brings you the best volunteer organizations and opportunities in the Washington, D.C. area. From helping families\r\n            achieve the dream of home ownership, to feeding the hungry, to helping animals, there's something for everyone.\r\n        </div>\r\n\r\n        <div class=\"small-12 medium-4 large-4 columns\">\r\n            <ul class=\"fa-ul\">\r\n                <li>\r\n                    <i class=\"fa-li fa fa-envelope-o fa-2x\"></i>\r\n                    <p class=\"margin-left-xs-small-only\">                        \r\n                        <a href=\"http://shermandigital.com/contact/\">Contact us</a>\r\n                        to list your organization or feature an upcoming event\r\n                    </p>\r\n                </li>\r\n            </ul>\r\n        </div>\r\n\r\n        <div class=\"small-12 medium-4 large-4 columns\">\r\n            <div class=\"menu-container\">\r\n                <a routerLink=\"/\" routerLinkActive=\"active\">\r\n                    <h5>\r\n                        Home\r\n                    </h5>\r\n                </a>\r\n                <span>Best volunteer opportunities in D.C.</span>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"row copyright\">\r\n        <div class=\"small-12 medium-6 large-6 columns\">\r\n            &copy; 2017 D.C. Volunteer, All Rights Reserved.<br>\r\n        </div>\r\n        <div class=\"medium-6 large-6 columns show-for-medium text-right\">\r\n            Developed by <a href=\"http://shermandigital.com/\">Chris Sherman</a>\r\n        </div>\r\n        <div class=\"small-12 columns show-for-small-only\">\r\n            <br> Developed by <a href=\"http://shermandigital.com/\">Chris Sherman</a>\r\n        </div>\r\n    </div>\r\n</footer>\r\n"
 
 /***/ },
 
 /***/ 672:
 /***/ function(module, exports) {
 
-module.exports = "<section *ngIf=\"hero\">\r\n  <div class=\"callout large\">\r\n    <div class=\"row column text-center\">\r\n      <h1>\r\n        {{hero.name}}  \r\n      </h1>\r\n      \r\n      <p class=\"lead\">\r\n        {{hero.lead}}\r\n      </p>\r\n      \r\n      <a [href]=\"hero.url\" target=\"_blank\" class=\"button\">\r\n        {{hero.name}}\r\n        Website\r\n        <i class=\"fa fa-external-link\"></i>\r\n      </a>\r\n    </div>\r\n  </div>\r\n\r\n  <div class=\"row content-group\">\r\n\r\n    <div class=\"show-for-small-only small-12 columns\">\r\n        <img src=\"/assets/images/{{hero.photoImage}}.jpg\" \r\n            alt=\"Volunteer photo\"\r\n            class=\"thumbnail\">\r\n    </div>\r\n\r\n    <div class=\"medium-6 columns\">\r\n      <h2>\r\n        About\r\n        {{hero.name}}\r\n      </h2>\r\n\r\n      <p>\r\n        {{hero.description}}\r\n      </p>\r\n    </div>\r\n\r\n    <div class=\"show-for-medium medium-6 large-offset-1 large-5 columns\">\r\n        <img src=\"/assets/images/{{hero.photoImage}}.jpg\" \r\n            alt=\"Volunteer photo\"\r\n            class=\"thumbnail\">\r\n    </div>\r\n  </div>\r\n\r\n  <div class=\"row content-group\">\r\n    <div *ngFor=\"let bulletPoint of hero.bulletPoints\" class=\"medium-4 columns\">\r\n      <p>{{bulletPoint}}</p>\r\n    </div>\r\n  </div>\r\n\r\n  <div class=\"row content-group-lg\">\r\n    <div class=\"small-12 columns\">\r\n      <button type=\"button\" class=\"button\" (click)=\"goBack()\">Back</button>\r\n    </div>\r\n  </div>\r\n</section>"
+module.exports = "<div class=\"row content-group\">\r\n    <div class=\"medium-6 large-6 columns\">\r\n        <h1 class=\"h2\">\r\n            Best Volunteer Opportunities in Washington, D.C.\r\n        </h1>\r\n\r\n        <p class=\"subheader\">\r\n            Below you'll find the best volunteer organizations in and around the D.C.\r\n            area. From helping families achieve the dream of home ownership, to feeding the\r\n            hungry, to helping animals, there's something for everyone.\r\n        </p>\r\n\r\n        <p class=\"subheader\">\r\n            Volunteering provides a sense of purpose and an outlet for helping others. \r\n            You'll help strengthen your community while building new skills.\r\n        </p>\r\n    </div>\r\n\r\n    <div class=\"show-for-medium-up medium-6 large-offset-1 large-5 columns\">\r\n\r\n        <div class=\"img-container ratio-feature-image\">\r\n            <a href=\"https://www.capitalareafoodbank.org/blue-jeans-ball/\" target=\"_blank\">\r\n                <img src=\"/assets/images/baa1831c-27bb-4d63-806a-7fb806ddb3f7.jpg\"\r\n                    alt=\"Featured volunteer event\" class=\"thumbnail\">\r\n\r\n                <p class=\"caption-container\">\r\n                    <small class=\"caption-content\">\r\n                        Featured Event\r\n                    </small>\r\n                </p>\r\n            </a>\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"medium-5 large-3 columns\">\r\n    </div>\r\n</div>\r\n\r\n<div class=\"row column\">\r\n    <hr>\r\n</div>\r\n\r\n<div class=\"row column\">\r\n    <p class=\"lead\">\r\n        Featured Opportunities\r\n    </p>\r\n</div>\r\n\r\n<div id=\"opportunityCards\" class=\"row small-up-1 medium-up-2 large-up-3\" data-equalizer>\r\n    <div *ngFor=\"let hero of heroes\" class=\"column\">\r\n        <a [routerLink]=\"['/opportunities', hero.urlFriendlyId]\">\r\n            <div class=\"callout\" data-equalizer-watch>\r\n                <h2 class=\"h5\" [textContent]=\"hero.name\"></h2>\r\n\r\n                <div class=\"img-container ratio-1-1\">\r\n                    <img src=\"/assets/images/{{hero.teaserImage}}@large.jpg\" \r\n                        [alt]=\"hero.name\">\r\n                </div>\r\n\r\n                <p class=\"content-group\" [textContent]=\"hero.lead\"></p>\r\n            </div>\r\n        </a>\r\n    </div>\r\n</div>"
 
 /***/ },
 
 /***/ 673:
 /***/ function(module, exports) {
 
+module.exports = "<section *ngIf=\"hero\">\r\n  <div class=\"callout large\">\r\n    <div class=\"row column text-center\">\r\n      <h1>\r\n        {{hero.name}}  \r\n      </h1>\r\n      \r\n      <p class=\"lead\">\r\n        {{hero.lead}}\r\n      </p>\r\n      \r\n      <a [href]=\"hero.url\" target=\"_blank\" class=\"button\">\r\n        {{hero.name}}\r\n        Website\r\n        <i class=\"fa fa-external-link\"></i>\r\n      </a>\r\n    </div>\r\n  </div>\r\n\r\n  <div class=\"row content-group\">\r\n\r\n    <div class=\"show-for-small-only small-12 columns\">\r\n        <img src=\"/assets/images/{{hero.photoImage}}.jpg\" \r\n            alt=\"Volunteer photo\"\r\n            class=\"thumbnail\">\r\n    </div>\r\n\r\n    <div class=\"medium-6 columns\">\r\n      <h2>\r\n        About\r\n        {{hero.name}}\r\n      </h2>\r\n\r\n      <p>\r\n        {{hero.description}}\r\n      </p>\r\n    </div>\r\n\r\n    <div class=\"show-for-medium medium-6 large-offset-1 large-5 columns\">\r\n        <img src=\"/assets/images/{{hero.photoImage}}.jpg\" \r\n            alt=\"Volunteer photo\"\r\n            class=\"thumbnail\">\r\n    </div>\r\n  </div>\r\n\r\n  <div id=\"bulletPointCards\" class=\"row content-group\" data-equalizer>\r\n    <div *ngFor=\"let bulletPoint of hero.bulletPoints\" class=\"medium-4 columns\">\r\n      <div class=\"callout secondary\" data-equalizer-watch>\r\n        <p>{{bulletPoint}}</p>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n  <div class=\"row content-group-lg\">\r\n    <div class=\"small-12 columns\">\r\n      <a class=\"button\" [routerLink]=\"['/']\">\r\n        Browse opportunities\r\n      </a>\r\n    </div>\r\n  </div>\r\n</section>"
+
+/***/ },
+
+/***/ 674:
+/***/ function(module, exports) {
+
 module.exports = "<div class=\"row content-group\">\r\n    <div class=\"large-12 columns\">\r\n        <h1 class=\"h2\">\r\n            Page not found\r\n        </h1>\r\n\r\n        <p>\r\n            We couldn't find what you're looking for. Please review your request.\r\n        </p>\r\n    </div>\r\n</div>"
 
 /***/ },
 
-/***/ 697:
+/***/ 698:
 /***/ function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(391);
+module.exports = __webpack_require__(392);
 
 
 /***/ }
 
-},[697]);
+},[698]);
 //# sourceMappingURL=main.bundle.map
