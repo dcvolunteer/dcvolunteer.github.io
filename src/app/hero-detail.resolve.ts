@@ -17,7 +17,7 @@ export class HeroDetailResolve implements Resolve<any> {
             if (hero) {
                 return hero;
             } else { // id not found
-                this.router.navigate(['/opportunities']);
+                this.router.navigate(['/']);
                 return false;
             }
         });

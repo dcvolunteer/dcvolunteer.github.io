@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl": "/opportunities",
+    "baseUrl": "/",
     "declaration": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,

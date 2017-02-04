@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
@@ -9,11 +9,10 @@ import { Router, NavigationEnd } from '@angular/router';
   ]
 })
 export class AppComponent {
-  title = 'D.C. Volunteer';
-
-  constructor(private router: Router) { }
+  public constructor(private router: Router) { }
 
   ngOnInit() {
+
     // Scroll to the top of the view when the route changes.
     this.router.events.subscribe((evt) => {
       if (!(evt instanceof NavigationEnd)) {

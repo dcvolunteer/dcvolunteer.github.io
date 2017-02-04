@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -13,6 +13,7 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 import { HeroService } from './hero.service';
+import {SeoService} from './common/seo.service';
 
 import { DashboardResolve } from './dashboard.resolve';
 import { HeroDetailResolve } from './hero-detail.resolve';
@@ -22,20 +23,24 @@ import { HeroDetailResolve } from './hero-detail.resolve';
     AppComponent,
     DashboardComponent,
     HeroDetailComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService),
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [
     DashboardResolve,
     HeroDetailResolve,
     HeroService,
+    Title,
+    SeoService,
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent,
+  ]
 })
 export class AppModule { }

@@ -7,9 +7,8 @@ import { HeroDetailResolve } from './hero-detail.resolve';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/opportunities', pathMatch: 'full' },
   { 
-    path: 'opportunities',  
+    path: '',  
     component: DashboardComponent,
     resolve: {
       heroes: DashboardResolve

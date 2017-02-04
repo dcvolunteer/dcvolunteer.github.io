@@ -30,7 +30,9 @@
   },
   "devDependencies": {
     "@angular/compiler-cli": "^2.3.1",
+    "@types/foundation-sites": "^6.1.28",
     "@types/jasmine": "2.5.38",
+    "@types/jquery": "^2.0.40",
     "@types/node": "^6.0.42",
     "angular-cli": "1.0.0-beta.24",
     "angular-cli-ghpages": "^0.4.1",

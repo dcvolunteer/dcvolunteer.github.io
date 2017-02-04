@@ -43,15 +43,19 @@
     </div>
   </div>
 
-  <div class="row content-group">
+  <div id="bulletPointCards" class="row content-group" data-equalizer>
     <div *ngFor="let bulletPoint of hero.bulletPoints" class="medium-4 columns">
-      <p>{{bulletPoint}}</p>
+      <div class="callout secondary" data-equalizer-watch>
+        <p>{{bulletPoint}}</p>
+      </div>
     </div>
   </div>
 
   <div class="row content-group-lg">
     <div class="small-12 columns">
-      <button type="button" class="button" (click)="goBack()">Back</button>
+      <a class="button" [routerLink]="['/']">
+        Browse opportunities
+      </a>
     </div>
   </div>
 </section>

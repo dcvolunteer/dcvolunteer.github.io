@@ -20,12 +20,12 @@
 
         <div class="img-container ratio-feature-image">
             <a href="https://www.capitalareafoodbank.org/blue-jeans-ball/" target="_blank">
-                <img src="/assets/images/baa1831c-27bb-4d63-806a-7fb808ddb3f7.jpg"
+                <img src="/assets/images/baa1831c-27bb-4d63-806a-7fb806ddb3f7.jpg"
                     alt="Featured volunteer event" class="thumbnail">
 
                 <p class="caption-container">
                     <small class="caption-content">
-                        Featured event
+                        Featured Event
                     </small>
                 </p>
             </a>
@@ -42,14 +42,14 @@
 
 <div class="row column">
     <p class="lead">
-        Top Opportunities
+        Featured Opportunities
     </p>
 </div>
 
-<div class="row small-up-1 medium-up-2 large-up-3">
+<div id="opportunityCards" class="row small-up-1 medium-up-2 large-up-3" data-equalizer>
     <div *ngFor="let hero of heroes" class="column">
         <a [routerLink]="['/opportunities', hero.urlFriendlyId]">
-            <div class="callout">
+            <div class="callout" data-equalizer-watch>
                 <h2 class="h5" [textContent]="hero.name"></h2>
 
                 <div class="img-container ratio-1-1">
