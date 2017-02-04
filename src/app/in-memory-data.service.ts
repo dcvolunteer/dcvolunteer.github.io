@@ -81,7 +81,7 @@ export class InMemoryDataService implements InMemoryDbService {
         id: 16,
         urlFriendlyId: 'coderdojo-nova',
         name: 'CoderDojo NOVA',
-        lead: 'CoderDojo is a movement oriented around running free, not-for-profit coding clubs and regular sesssions for young people.',
+        lead: 'CoderDojo is a movement oriented around running free, not-for-profit coding clubs and regular sessions for young people.',
         description: 'At CoderDojo NOVA (“CoderNova”), young people learn how to code, develop websites, apps, programs, games and more. CoderNova is set up, run by and taught at by volunteers. We organize tours of technology companies, bring in guest speakers to talk about their career and what they do, and organize events. CoderNova makes development and learning to code a fun, sociable, and cool experience. CoderNova also puts a strong emphasis on open source and free software, and has a strong network of members and volunteers globally.',
         bulletPoints: [
           'Thomas Debass (@debass) and Gelila Teshome (@GelilaAmare) co-founded CoderDojo Nova in 2013, driven by their desire to expose their three daughters the universal language of the future: coding.',
