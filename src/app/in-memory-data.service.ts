@@ -67,11 +67,11 @@ export class InMemoryDataService implements InMemoryDbService {
         urlFriendlyId: 'capital-area-food-bank',
         name: 'Capital Area Food Bank',
         lead: 'Working to solve hunger and its companion problems: chronic undernutrition, heart disease, and obesity.',
-        description: 'The Capital Area Food Bank is the largest organization in the Washington metro area working to solve hunger and its companion problems: chronic undernutrition, heart disease, and obesity. We provide meals to 12 percent of the Washington metro area population – that\'s 540,000 of our region\'s mothers, fathers, sons, daughters, sisters, brothers, and grandparents. We work with our network of 444 food assistance partners to provide food and nutrition education to our neighbors in need.',
+        description: 'The Capital Area Food Bank is the largest organization in the Washington metro area working to solve hunger and its companion problems: chronic undernutrition, heart disease, and obesity. We provide meals to 12 percent of the Washington metro area population – that\'s 540,000 of our region\'s mothers, fathers, daughters, sons, sisters, brothers, and grandparents. We work with our network of 444 food assistance partners to provide food and nutrition education to our neighbors in need.',
         bulletPoints: [
           'Hunger: It\'s here, right where we live. It affects every single neighborhood in our region. It impacts people of every age, race, religion, and ethnicity.',
           'Hunger robs children of a chance to learn, undermines health, and makes getting and holding good jobs hard.',
-          'By partnering with 444 community organizations in DC, MD, and VA, as well as delivering food directly into hard to reach areas, the CAFB is helping 540,000 people each year get access to good, healthy food.'
+          'By partnering with 444 community organizations in DC, MD, and VA, as well as delivering food directly into hard to reach areas, the Capital Area Food Bank is helping 540,000 people each year get access to good, healthy food.'
         ],
         url: 'https://www.capitalareafoodbank.org/',
         teaserImage: 'capitalfood',
